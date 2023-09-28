@@ -43,13 +43,13 @@ const { email, setEmail } = useLocalstorage();
 1. Clone this repository to your local machine:
 
    ```bash
-   gh repo clone aman-q/moviesflix
+   gh repo clone aman-q/login_form_using_coustom_hook
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd movieflix
+   cd login_form_using_coustom_hook
    ```
 
 3. Install the project dependencies:
