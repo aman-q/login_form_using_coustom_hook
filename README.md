@@ -8,8 +8,6 @@ This is a simple React application that provides a login form with email and pas
 - [Usage](#usage)
 
 - [Custom Hook: `useLocalstorage`](#custom-hook-uselocalstorage)
-- [Contributing](#contributing)
-- [License](#license)
 - [Installation](#installation)
 
 
@@ -39,3 +37,30 @@ import useLocalstorage from "./useLocalstorage";
 // ...
 
 const { email, setEmail } = useLocalstorage();
+```
+### Installation
+
+1. Clone this repository to your local machine:
+
+   ```bash
+   gh repo clone aman-q/moviesflix
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd movieflix
+   ```
+
+3. Install the project dependencies:
+  If you use npm:
+
+   ```bash
+   npm install
+   ```
+
+   If you use Yarn:
+
+   ```bash
+   yarn install
+   ```
