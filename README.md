@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# Simple React Login Form with Custom Hook
+[Live Demo](https://statuesque-cascaron-242a94.netlify.app/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple React application that provides a login form with email and password input fields. It also includes a "Forgot Password" feature that allows users to reset their password using their email address. The email input state is managed using a custom hook called `useLocalstorage`.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Usage](#usage)
 
-### `npm start`
+- [Custom Hook: `useLocalstorage`](#custom-hook-uselocalstorage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Installation](#installation)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Usage
 
-### `npm test`
+This React application provides a simple login form with two input fields for email and password. It also includes a "Forgot Password" link that allows users to reset their password using their email.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To use the login form, follow these steps:
 
-### `npm run build`
+1. Enter your email address in the "Email" input field.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Enter your password in the "Password" input field.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Click the "Login" button to log in.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. If you forget your password, click the "Forgot Password" link. This will take you to a password reset page where you can enter your email address and receive a password reset link in your email inbox.
 
-### `npm run eject`
+## Custom Hook: `useLocalstorage`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The custom hook `useLocalstorage` is used in this project to manage the email input value. This hook allows you to store and retrieve the email input value from the browser's local storage, ensuring that the email remains persistent even if the user refreshes the page or navigates away.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The `useLocalstorage` hook is defined in the `useLocalstorage.js` file and is imported and used in both the `Login` and `Forgotpass` components to synchronize and manage the email input state.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```javascript
+import useLocalstorage from "./useLocalstorage";
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+// ...
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+const { email, setEmail } = useLocalstorage();
